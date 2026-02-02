@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News Detection</title>
+
+  <!-- Splash CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/splash.css') }}">
+</head>
+
+<body onclick="goToLogin()">
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Splash Content -->
+  <div class="splash-container">
+    <h1 class="title">Fake News Detection</h1>
+    <p class="subtitle">Explainable AI for Truth Verification</p>
+    <p class="tap">Tap anywhere to continue</p>
+  </div>
+
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 45,
+      density: { enable: true, value_area: 900 }
+    },
+    color: {
+      value: ["#f8fafc", "#e5e7eb", "#f1f5f9"]  // newspaper shades
+    },
+    shape: {
+      type: "polygon",
+      polygon: {
+        nb_sides: 4   // paper rectangles
+      }
+    },
+    opacity: {
+      value: 0.35,
+      random: true
+    },
+    size: {
+      value: 14,
+      random: true
+    },
+    rotate: {
+      value: 45,
+      random: true
+    },
+    move: {
+      enable: true,
+      speed: 0.8,
+      direction: "bottom",
+      random: true,
+      straight: false,
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: false },
+      onclick: { enable: false }
+    }
+  },
+  retina_detect: true
+});
+
+function goToLogin() {
+  window.location.href = "/login";
+}
+</script>
+
+
+</body>
+</html>

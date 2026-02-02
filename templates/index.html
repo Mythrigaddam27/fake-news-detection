@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fake News Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="container">
+  <h1>📰 Fake News Detection</h1>
+  <p class="intro">Analyze news credibility using explainable AI.</p>
+
+  <!-- Article Input -->
+  <textarea id="articleInput" placeholder="Paste full news article here..."></textarea>
+
+  <!-- Source toggle -->
+  <div class="source-toggle">
+    <input type="checkbox" id="unverifiedSource">
+    <label for="unverifiedSource">
+      Article from social media / unknown source
+    </label>
+  </div>
+
+  <!-- Detect button -->
+  <button id="detectButton">Detect</button>
+
+  <!-- Result -->
+  <div id="result" class="hidden">
+    <h2>Analysis Result</h2>
+
+    <div class="result-item" id="label"></div>
+    <div class="result-item" id="confidenceText"></div>
+
+    <!-- Confidence bar -->
+    <div class="confidence-bar">
+      <div id="confidenceFill" class="confidence-fill"></div>
+    </div>
+
+    <div class="result-item" id="reason"></div>
+    <div class="result-item" id="keywords"></div>
+
+    <h3>Keywords in Article</h3>
+    <div id="highlightedText" class="article-preview"></div>
+
+    <p class="disclaimer">
+      ⚠️ This tool assists users and should not be treated as the sole source of truth.
+    </p>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

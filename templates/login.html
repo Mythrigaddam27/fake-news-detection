@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Fake News Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="login-page">
+
+  <!-- Particles background -->
+  <div id="particles-js"></div>
+
+  <div class="login-container">
+    <h2>Welcome Back 👋</h2>
+    <p class="login-sub">
+      Secure access to Fake News Detection
+    </p>
+    
+    {% if error %}
+      <div class="login-error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.25 },
+        size: { value: 3 },
+        move: { enable: true, speed: 1 }
+      }
+    });
+  </script>
+
+</body>
+</html>
